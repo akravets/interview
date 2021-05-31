@@ -55,9 +55,30 @@ Keep it simple. Creating distributed systems is expensive both money wise and ma
   - Balance incoming traffic from multiple servers
   - Used to improve reliability and scalability of applications
   - Examples
-    - Software based 
+    - Software based (portable, can switch to others easiliy)
       - Nginx
       - HAProxy
-    - Hardware based
+    - Hardware based (vendor locking, hard to switch)
       - F5
       - Citrix
+  - Routing Methods
+    - **Round Robin** Most simple, cycles throw each server sequentially. Uneven traffic
+    - **Least Connections** Routes based on number of client connections to server (chat server)
+    - **Least Response Time** Routes based on how quickly servers respond
+    - **IP Hash** Routes clients to server based on client's IP address
+  - Load Balancer types
+    
+    A lot of designs first route requests through L4 and then L7
+    
+    - **Layer 4** 
+      - Only has access to TCP data 
+      - Faster
+      - Lack of information can lead to even traffic
+      - Usefuly to act upon requests early, such as based on IP address
+    - **Layer 7**
+      - Full access to HTP protocol and data
+      - Check for authentication
+      - Smarter routing options since we know what request is
+      - More CPU intesive, slower than L4
+
+When you have single load balancer, you have the same issue as not having a LB since it can also fail. That's why having multiple LB's can lessen the possibility of one LB going down, because they communicate with each other to spread the requests.
