@@ -131,15 +131,36 @@ When cached data is updated in the database, you want to remove it from cache af
     -  Track number of times key is accessed
     -  Drop least used when cache is full
 
-### Caching Strategies
+# Caching Strategies
+![cache aside](images/cache-aside.png)
 
-  - **Cache Aside**
-    - Application first checks cache
-    - If data is found in cache, the data is returned to client
-    - if data is not found, data is read from the database, added to cache and returned to client
-    - Best for read-heavy workloads (Memcached and Redis)
-    - Resilient to cache failure
-    - Data can become inconsistent
+**Best for read-heavy workloads (Memcached and Redis)**
 
-  - **Read-Through**
-    - 
+   - Application first checks cache
+   - If data is found in cache, the data is returned to client
+   - if data is not found, data is read from the database, added to cache and returned to client
+   - Resilient to cache failure
+   - Data can become inconsistent
+    
+![read-through](images/read-through.png)
+
+**Best for read-heavy**
+
+   - Read-through cache sits in-line with the database. When there is a cache miss, it loads missing data from database, populates the cache and returns it to the application
+   - Logic is usually supported by the library or stand-alone cache provider Unlike cache-aside, the data model in read-through cache cannot be different than that of the database
+   - Disadvantage is that when the data is requested the first time, it always results in cache miss and incurs the extra penalty of loading data to the cache. To deal with this, cache is warmed up with manually populating cache
+
+![write-through](images/write-through.png)
+
+Data is first written to cache and the to data store.
+
+# Write-Around
+
+Data is written only to the backing store without writing to the cache. So, I/O completion is confirmed as soon as the data is written to the backing store.
+
+![write-back](images/write-back.png)
+
+**Good for write-heavy**
+
+  - Writes to cache and then flushes to database after some interva;
+  - Resilient to database failures
