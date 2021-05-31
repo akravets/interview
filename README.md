@@ -82,3 +82,33 @@ Keep it simple. Creating distributed systems is expensive both money wise and ma
       - More CPU intesive, slower than L4
 
 When you have single load balancer, you have the same issue as not having a LB since it can also fail. That's why having multiple LB's can lessen the possibility of one LB going down, because they communicate with each other to spread the requests.
+
+# Caching
+
+Taking data that would normally be stored on hard drive and store it in memory.
+
+## Advantages
+  
+  - Improves application performance
+  - Saves money on bandwidth
+  - Speed and performance 
+
+Client <--> App Server <--> Cache <-- If data not in cache, query database --> Database
+
+**Example** 
+
+We have application where people buy widgets. App stores data about widget prices that don't change a lot. Instead of going to database every time widget price is needed, we can setup a cache where these prices will be stored so that we don't have to go to datbase each time.
+
+#### Caching Layers
+
+  - DNS
+  - CDN
+  - Application
+  - Database
+
+#### Distributed Cache
+
+  - Works as traditional cache
+  - Has built-in functionality to replicate data, shard data across servers, and locate proper server for each key
+
+**With distributed cache or anything distributed you always want to have passive replica of your entity. This is needed in case your master entity goes down, you want to quicky recover from that**
