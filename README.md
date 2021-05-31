@@ -43,3 +43,21 @@ Keep it simple. Creating distributed systems is expensive both money wise and ma
   - Avoid network calls whenever possible
   - Replicate data across data centers for recovery and performance
   - Keep frequently accessed data in memory rather than in cache ro disk
+
+## Scaling
+
+  - **Vertical:** Upgrading hardware of your machine to increase performance (single point of failure, but relatively simple)
+  - **Horizontal:** Add additional machines to increase performance (more robust, but complex)
+
+# System Design Components
+
+## Load Balancers
+  - Balance incoming traffic from multiple servers
+  - Used to improve reliability and scalability of applications
+  - Examples
+    - Software based 
+      - Nginx
+      - HAProxy
+    - Hardware based
+      - F5
+      - Citrix
