@@ -2,6 +2,8 @@
 
 Keep it simple. Creating distributed systems is expensive both money wise and maintenance/resource wise. If something can be made in a single system, then it's better approach initially.
 
+**With distributed cache or anything distributed you always want to have passive replica of your entity. This is needed in case your master entity goes down, you want to quicky recover from that**
+
 # Distributed System Characteristics
 
   - **No shared clock:** Difference in time (clock drift), issue with ordering of events and communication between nodes
@@ -110,5 +112,3 @@ We have application where people buy widgets. App stores data about widget price
 
   - Works as traditional cache
   - Has built-in functionality to replicate data, shard data across servers, and locate proper server for each key
-
-**With distributed cache or anything distributed you always want to have passive replica of your entity. This is needed in case your master entity goes down, you want to quicky recover from that**
