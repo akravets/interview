@@ -112,3 +112,34 @@ We have application where people buy widgets. App stores data about widget price
 
   - Works as traditional cache
   - Has built-in functionality to replicate data, shard data across servers, and locate proper server for each key
+
+#### Cache eviction
+
+When cached data is updated in the database, you want to remove it from cache after database update so that cache can be filled up with most recent data
+
+  - Preventing stale data
+  - Caching only most valuable data to save resources
+
+  - TTL (Time To Live)
+    - Set time period before cache entry is deleted
+    - Used to prevent stale data
+
+  - LRU (Least Recently Used)
+    -  Once cache is full, remove last accessed key and add new key
+
+  - LFU (Least Recently Used)
+    -  Track number of times key is accessed
+    -  Drop least used when cache is full
+
+### Caching Strategies
+
+  - **Cache Aside**
+    - Application first checks cache
+    - If data is found in cache, the data is returned to client
+    - if data is not found, data is read from the database, added to cache and returned to client
+    - Best for read-heavy workloads (Memcached and Redis)
+    - Resilient to cache failure
+    - Data can become inconsistent
+
+  - **Read-Through**
+    - 
