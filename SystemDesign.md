@@ -164,3 +164,12 @@ Data is written only to the backing store without writing to the cache. So, I/O 
 
   - Writes to cache and then flushes to database after some interva;
   - Resilient to database failures
+
+# Database scaling
+
+  - **Verical scaling** Move to bigger database
+  - **Indexing**
+  - **Denormalization**
+  - **Connection Pool**
+  - **Caching**
+  - **Replication and Partitioning**
