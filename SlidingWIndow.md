@@ -1,5 +1,7 @@
 # Sliding Window
 
+ - https://medium.com/outco/how-to-solve-sliding-window-problems-28d67601a66
+
 Sliding window algorithm is used when you need to find sub-array that resolves to particular value, or sub-array of particular size.
 
  - Good for finding sub-array (substring) that is longest, shortest or particular value.
