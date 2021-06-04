@@ -1,5 +1,7 @@
 # System design
 
+ - https://gist.github.com/vasanthk/485d1c25737e8e72759f
+
 Keep it simple. Creating distributed systems is expensive both money wise and maintenance/resource wise. If something can be made in a single system, then it's better approach initially.
 
 **With distributed cache or anything distributed you always want to have passive replica of your entity. This is needed in case your master entity goes down, you want to quicky recover from that**
