@@ -5,7 +5,7 @@ Sliding window algorithm is used when you need to find sub-array that resolves t
  - Good for finding sub-array (substring) that is longest, shortest or particular value.
  - Doesn't work arrays that contain zero's or negative numbers
 
-Example of brute force
+**brute force O(n^2)**
 
 ```java
 public class SlidingWindowBruteForce {
@@ -32,6 +32,22 @@ public class SlidingWindowBruteForce {
     }
 }
 ```
+**Sliding window O(n)**
+```java
+  static int maxSumN(int arr[], int n, int k){
+        int max = 0;
+        int windowMax = 0;
 
+        for(int i = 0; i < k; i++){
+            windowMax += arr[i];
+        }
+
+        for(int j = k; j < arr.length; j++){
+            windowMax += arr[j] - arr[j - k];
+            max = Math.max(windowMax, max);
+        }
+        return max;
+    }
+```
 
 ![slidingWindow](https://user-images.githubusercontent.com/488962/120744969-2948b200-c4ca-11eb-8399-2c3e27214c3a.png)
