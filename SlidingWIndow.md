@@ -17,7 +17,7 @@ public class SlidingWindowBruteForce {
     }
 
     static int maxSum(int arr[], int n, int k) {
-       int max = 0;
+       int max = Integer.MIN_VALUE;
 
        // limit is n - k because we are iterating in chunks of 'k', 
        // and so we want to stop at n-k so that last inner loop could run
