@@ -129,7 +129,7 @@ When cached data is updated in the database, you want to remove it from cache af
   - LRU (Least Recently Used)
     -  Once cache is full, remove last accessed key and add new key
 
-  - LFU (Least Recently Used)
+  - LFU (Least Frequently Used)
     -  Track number of times key is accessed
     -  Drop least used when cache is full
 
