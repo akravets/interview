@@ -1,6 +1,7 @@
 # System design
 
  - https://gist.github.com/vasanthk/485d1c25737e8e72759f
+ - [Cache patterns](https://hazelcast.com/blog/a-hitchhikers-guide-to-caching-patterns)
 
 Keep it simple. Creating distributed systems is expensive both money wise and maintenance/resource wise. If something can be made in a single system, then it's better approach initially.
 
