@@ -171,8 +171,8 @@ Data is written only to the backing store without writing to the cache. So, I/O 
 # Database scaling
 
   - **Verical scaling** Move to bigger database
-  - **Indexing**
-  - **Denormalization**
+  - **Indexing** Sort a column (firstName, ex) and make pointer from it to db record, beware of space as indexing needs more space
+  - **Denormalization** Store everything in one table (faster), vs in different table using joins (normalization)
   - **Connection Pool**
-  - **Caching**
+  - **Caching** Cache found data for later retrieval
   - **Replication and Partitioning**
