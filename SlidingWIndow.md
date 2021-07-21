@@ -104,7 +104,7 @@ class Solution {
 ```
 
 **Single loop**
-```
+```java
 public static int lengthOfLongestSubString(String s) {
   if (s.length() < 1) {
     return 0;
