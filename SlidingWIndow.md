@@ -104,6 +104,7 @@ class Solution {
 ```
 
 **Single loop**
+https://medium.com/@chyanpin/problem-solving-in-java-sliding-window-algorithm-f333d362478b
 ```java
 public static int lengthOfLongestSubString(String s) {
   if (s.length() < 1) {
