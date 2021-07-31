@@ -4,4 +4,5 @@
  - Most difficult challange in the past 30 days
 
 **Developer**
+- What is your usual day like?
 - Most interesting project you've worked on?
