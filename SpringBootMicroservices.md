@@ -9,6 +9,8 @@
  - Solving modularity issues (deploy individual services)
  - Make sure microservices can scale
 
+Microservices is about developing separate Spring Applications that communicate with each other.
+
 With microservices problems you are trying to solve are generic and most likely there are solutions for them - load balancing, distributed cache.
 
 You are solving issues between microservices, not within microservices.
