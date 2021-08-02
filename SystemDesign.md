@@ -176,3 +176,11 @@ Data is written only to the backing store without writing to the cache. So, I/O 
   - **Connection Pool**
   - **Caching** Cache found data for later retrieval
   - **Replication and Partitioning**
+
+# Webapp scaling
+
+ - Use Content Delivery Network (CDN) for static content
+ - Use cache for prefetched database queries and updte cache when database query is re-run
+ - Optimize datbase queries because if datbases queries are slow, then datbase connection is open for too long and web service exceeds number of connections
+ - Master-slave database replication
+   - Write to master, but read from slave. This is good because there is more load to write than read.
