@@ -6,3 +6,6 @@
 **Developer**
 - What is your usual day like?
 - Most interesting project you've worked on?
+
+**Things to research**
+- manage concurrent users in web application
